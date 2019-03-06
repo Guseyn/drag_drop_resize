@@ -76,7 +76,7 @@ function dragAndDrop (elm, wrapElm) {
   let elmHeight = elm.offsetHeight
   let elmWidth = elm.offsetWidth
   document.onmouseup = function () {
-    for (let i = 0 i < elms.length i++) {
+    for (let i = 0; i < elms.length; i++) {
       document.removeEventListener('mousemove', mouseMoveEvents[i])
       elms[i].style.zIndex = zIndexes[i]
       elms[i].style.cursor = 'default'
