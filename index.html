@@ -1,39 +1,72 @@
-
 <!doctype html>
 
 <html lang="en">
-    <head>
-        
-        <meta charset="utf-8">
-        <title>guseyn</title>
-        
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="tricks.js"></script>
+    <style>
+      #wrapElm {
+        width: 300px;
+        height:300px;
+        position: relative;
+        top:30px;
+        left:30px;
+        background: #cc3333;
+      }
+      #elm {
+        width: 90px;
+        height: 50px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: #00bfff
+      }
+      #elm2 {
+        width: 90px;
+        height: 50px;
+        position: absolute;
+        top:0px;
+        left:90px;
+        background: #4ca64c;
+      }
+      #wrapElm2 {
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+        position: absolute;
+        top: 0px;
+        left:400px;
+        background: #ffb732;
+      }
+      #elm3 {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: nwse-resize;
+        background: #d3d3d3;
+      }
+    </style>
+  </head>
 
-        <script type="text/javascript" src="tricks.js"></script>
-        
-    </head>
-
-    <body>
-
-    	<div id="wrapElm" style="background: #cc3333; width: 300px;height:300px;position: relative; top:30px; left:30px;">
-				<div id="elm" style="background: deepskyblue; width: 90px;height: 50px;position: absolute; top:0px; left:0px;">
-
-				</div>
-				<div id="elm2" style="background: green; width: 90px; height: 50px;position: absolute; top:0px; left:90px;">
-				
-				</div>
-			</div>
-			<div id="elm3" style="background: orange; width: 100px; height: 100px; margin-top: 30px;position: absolute; top: 0px;left:400px;">
-				<div id="resize-drag-elm" style="background: lightgrey; width: 25px; height: 25px; position: absolute; bottom: 0; right: 0;cursor: nwse-resize;"></div>
-			</div>
-		</body>
-		<script type="text/javascript">
-			let elm = document.getElementById('elm');
-			let elm2 = document.getElementById('elm2');
-			let wrapElm = document.getElementById('wrapElm');
-			let elm3 = document.getElementById('elm3');
-			let resizeDragElm = document.getElementById('resize-drag-elm');
-			dragAndDrop(elm, wrapElm);
-			dragAndDrop(elm2, wrapElm);
-			dragAndResize(elm3, resizeDragElm, 100, 100);
-		</script>
+  <body>
+    <div id="wrapElm">
+      <div id="elm"></div>
+      <div id="elm2"></div>
+    </div>
+    <div id="wrapElm2">
+      <div id="elm3"></div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    let wrapElm = document.getElementById('wrapElm')
+    let elm = document.getElementById('elm')
+    let elm2 = document.getElementById('elm2')
+    let wrapElm2 = document.getElementById('wrapElm2')
+    let elm3 = document.getElementById('elm3')
+    dragAndDrop(elm, wrapElm)
+    dragAndDrop(elm2, wrapElm)
+    dragAndResize(wrapElm2, elm3, 100, 100)
+  </script>
 </html>
